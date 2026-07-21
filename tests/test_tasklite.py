@@ -12,6 +12,8 @@ def test_add_and_load(tmp_path, monkeypatch):
 
     tasklite.add_task("write tests")
     tasks = tasklite.load_tasks()
+    tasklite.list_task("tasks")
+    tasklite.mark_done("finished")
 
     assert len(tasks) == 1
     assert tasks[0]["description"] == "write tests"
